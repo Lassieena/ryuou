@@ -1,13 +1,19 @@
 $(() => {
 
-  const tex = ['竜王', '中村カンパニー', '竜王財団', 'NOIR', 'ヨウヨウファイナンス'];
-  let n = 0;
+  const tex = ['竜王', 'NOIR', '竜王財団', '中村カンパニー', 'ヨウヨウファイナンス'];
+  let n = -1;
 
   setInterval(() => {
+    if (n >= tex.length - 1) {
+      const num = Math.floor(Math.random() * tex.length);
+      $(".ryuou").text(tex[num]);
+      console.log("num = " + num);
+    } else {
+      n++;
+      $(".ryuou").text(tex[n]);
+      console.log("n = " + n);
+    }
 
-    // const num = Math.floor(Math.random() * tex.length);
-    $(".ryuou").text(tex[n]);
-    n++;
   }, 4000);
 
 
